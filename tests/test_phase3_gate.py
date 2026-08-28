@@ -12,6 +12,11 @@ Discovery over real sites is not deterministic the way a unit test is. Sites go
 down, redirect, and rewrite their navigation. The assertions are therefore about
 the *shape* of the result across the sample rather than exact URLs, and the
 printed table is the part a human reads.
+
+**In this public copy the goldset domains are pseudonyms**, so this gate needs a
+real domain list to say anything. Point it at one with `--labels`-style input of
+your own, or run it against the private goldset. It stays deselected by default
+either way, and the rest of the suite is fully offline and unaffected.
 """
 
 from __future__ import annotations
