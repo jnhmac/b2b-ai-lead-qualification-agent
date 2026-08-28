@@ -140,7 +140,15 @@ cp .env.example .env        # then fill it in
 .venv/bin/python -m cleanroom.cli crawl --domains eval/goldset.jsonl --budget 600
 .venv/bin/python -m cleanroom.cli extract --dry-run
 .venv/bin/python -m cleanroom.cli extract --budget-usd 5
+.venv/bin/python -m cleanroom.cli classify --dry-run
+.venv/bin/python -m cleanroom.cli classify --budget-usd 5
+
+.venv/bin/python eval/evaluate.py --labels eval/goldset_tier_b_holdout25.jsonl
 ```
+
+Every metered stage prices itself for free with `--dry-run` before it spends
+anything, and `--run-id` re-runs one stage against stored output rather than
+starting over.
 
 The test suite is fully offline. The GCS backend runs against an in-memory
 double of the Google client, so both storage backends are exercised in CI with
@@ -148,6 +156,8 @@ no bucket and no credentials.
 
 ## Further reading
 
+- [BUILD.md](BUILD.md) — the original build spec, written before any code, and
+  the phase gates each stage had to pass
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — module map, data flow, the
   storage and provider seams
 - [docs/EVALUATION.md](docs/EVALUATION.md) — how accuracy is measured, and why
@@ -164,6 +174,12 @@ row counts, employee counts, reviewer notes) but every company identity in them
 has been replaced with a pseudonym, and the same substitution has been applied
 to company names appearing in source comments. No client data, no API keys and
 no internal run history are included.
+
+Some comments cite internal working documents that are not included here: run
+logs and design reviews under `outputs/`, the handoff notes under
+`docs/handoff-v2.2/`, and `NEXT.md`. The citations are left in place rather than
+scrubbed, because a comment that names the document a decision came from is more
+useful than one that quietly drops it.
 
 Seven tests in `tests/test_crawl_policy.py` are marked `xfail`. They are
 acceptance tests for steps 2 to 4 of the conditional crawl ladder, written

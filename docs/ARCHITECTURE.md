@@ -21,7 +21,8 @@ stages.
 | `ladder.py` | 323 | Conditional crawl ladder: escalate only when the cheap pass is inconclusive |
 | `cli.py` | 809 | `crawl`, `extract`, `classify`, `credits` |
 
-Roughly 10,000 lines of source against 9,900 lines of tests.
+10,653 lines of source against 9,243 lines of tests, plus a 1,077-line
+evaluation harness in `eval/`.
 
 ## Data flow
 
