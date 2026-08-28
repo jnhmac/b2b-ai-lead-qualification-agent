@@ -1,0 +1,13 @@
+{
+  "_source": "Reconstructed from data/raw/lakevernmedical.com/2026-08-26/manifest.json.",
+  "_note": "The manifest recorded four homepage attempts, all status 200, all resolving to integrix.net, followed by robots, four sitemap probes and a careers-detail hop, then ten Firecrawl scrapes of integrix.net pages. The 301s themselves were not captured on the wire, so the redirect chain here is reconstructed from the recorded resolved_domain. The structural condition is what the fixture pins: every host of the requested domain lands on a different registrable domain.",
+  "domain": "lakevernmedical.com",
+  "resolved_domain": "integrix.net",
+  "routes": [
+    {"host": "lakevernmedical.com", "path": "*", "status": 301, "location": "https://www.integrix.net/home"},
+    {"host": "www.lakevernmedical.com", "path": "*", "status": 301, "location": "https://www.integrix.net/home"},
+    {"host": "www.integrix.net", "path": "/home", "status": 200, "body": "<html><body><nav><a href=\"/capabilities\">Capabilities</a><a href=\"/markets/interactive-market-guide\">Markets</a><a href=\"/products/products-a-z\">Products A-Z</a><a href=\"/company/our-locations\">Our Locations</a><a href=\"/careers\">Careers</a><a href=\"/company/about\">About</a></nav></body></html>"},
+    {"host": "integrix.net", "path": "/robots.txt", "status": 200, "body": "User-agent: *\nAllow: /\n"},
+    {"host": "www.integrix.net", "path": "/careers", "status": 200, "body": "<html><body><a href=\"/careers/open\">Open roles</a></body></html>"}
+  ]
+}

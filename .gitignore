@@ -1,0 +1,17 @@
+# Environments
+.venv/
+venv/
+.env
+
+# Run artifacts. The store, run logs and reports are per-run and never committed:
+# a re-run that rewrites history invalidates every evaluation that cited it.
+data/
+outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/

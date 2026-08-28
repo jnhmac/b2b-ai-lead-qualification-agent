@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling==1.28.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cleanroom-classifier"
+version = "0.1.0"
+description = "Four-way cleanroom verdicts for medical device manufacturer domains, with verbatim evidence."
+requires-python = ">=3.11"
+
+# Pinned exactly. This pipeline is re-run against stored raw pages for months;
+# a silent minor bump in tldextract or pydantic changes output without changing
+# any prompt, which makes run-to-run diffs meaningless.
+dependencies = [
+    "pydantic==2.13.4",
+    "python-dotenv==1.2.2",
+    "PyYAML==6.0.3",
+    "tldextract==5.3.1",
+    "httpx==0.28.1",
+    "google-cloud-storage==3.13.1",
+    "anthropic==0.120.2",
+    "firecrawl-py==4.34.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+]
+
+[project.scripts]
+cleanroom = "cleanroom.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cleanroom"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "eval"]
+filterwarnings = ["error::DeprecationWarning:cleanroom.*"]
+# The Phase 3 gate crawls real sites, so it is deselected by default: a suite
+# that fails because someone's homepage is down is a suite people stop running.
+# Run it with `pytest -m live -s`.
+markers = ["live: hits the network against real domains"]
+addopts = "-m 'not live'"

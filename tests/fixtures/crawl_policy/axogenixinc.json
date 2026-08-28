@@ -1,0 +1,13 @@
+{
+  "_source": "Structure taken from data/raw/axogenixinc.com/2026-08-26/manifest.json and the stored ir.axogenixinc.com/news-events markdown.",
+  "_note": "The manifest shows ir.axogenixinc.com/ AND ir.axogenixinc.com/news-events were both fetched, so the crawler does walk ir. hosts; the work order's 'does not walk ir. hosts' is incorrect. The news-events index is 93 words and carries four press-release detail links. The ISO14644 sentence lives one link deeper, at /detail/962/. The detail-page body below is the quote reported by the blind pass; the live index no longer lists release 962 on page one, which is why this replays rather than fetches.",
+  "domain": "axogenixinc.com",
+  "routes": [
+    {"host": "www.axogenixinc.com", "path": "/", "status": 200, "body": "<html><body><nav><a href=\"/hcp/products\">Products</a><a href=\"/about-axogenix\">About</a><a href=\"/about-axogenix/careers\">Careers</a><a href=\"https://ir.axogenixinc.com/\">Investors</a></nav></body></html>"},
+    {"host": "axogenixinc.com", "path": "*", "status": 301, "location": "https://www.axogenixinc.com/"},
+    {"host": "www.axogenixinc.com", "path": "/hcp/products", "status": 200, "body": "<html><body><h1>Products</h1><p>Avelo Soft Tissue Matrix and Axoguide nerve protectors.</p></body></html>"},
+    {"host": "ir.axogenixinc.com", "path": "/", "status": 200, "body": "<html><body><a href=\"/news-events\">News and Events</a></body></html>"},
+    {"host": "ir.axogenixinc.com", "path": "/news-events", "status": 200, "body": "<html><body><a href=\"/news-events/press-releases/detail/962/axogenix-opens-new-facility\">Axogenix opens new facility</a><a href=\"/news-events/press-releases/detail/1024/axogenix-inc-reports-second-quarter-2026\">Q2 2026 results</a><a href=\"/news-events/press-releases\">All press releases</a></body></html>"},
+    {"host": "ir.axogenixinc.com", "path": "/news-events/press-releases/detail/962/axogenix-opens-new-facility", "status": 200, "body": "<html><body><p>The new 107,000 square feet facility includes ISO14644 clean rooms, internal quality labs, a surgeon and tissue agency training lab.</p></body></html>"}
+  ]
+}

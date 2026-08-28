@@ -1,0 +1,15 @@
+{
+  "_source": "Structure taken from data/raw/precept-biorobotics.com/2026-08-26/manifest.json and its stored careers markdown, which contains real Workday links of the form preceptbiorobotics.wd108.myworkdayjobs.com/PRECEPT/job/...",
+  "_note": "The run fetched /careers and three careers sub-pages including /careers/open-positions, and quoted /careers/our-teams/manufacturing. The Assembler II cleanroom sentence is on the Workday posting, one link past open-positions. The Workday tenant is a different registrable domain (myworkdayjobs.com), so is_crawlable drops those links today; tab 2a R7 permits an ATS board whose company token is verifiably the company.",
+  "domain": "precept-biorobotics.com",
+  "routes": [
+    {"host": "www.precept-biorobotics.com", "path": "/", "status": 200, "body": "<html><body><nav><a href=\"/careers\">Careers</a><a href=\"/about-us\">About</a></nav><p>We build the HYDROS Robotic System for BPH treatment.</p></body></html>"},
+    {"host": "precept-biorobotics.com", "path": "*", "status": 301, "location": "https://www.precept-biorobotics.com/"},
+    {"host": "www.precept-biorobotics.com", "path": "/careers", "status": 200, "body": "<html><body><a href=\"/careers/open-positions\">Open positions</a><a href=\"/careers/our-teams/manufacturing\">Manufacturing</a></body></html>"},
+    {"host": "www.precept-biorobotics.com", "path": "/careers/open-positions", "status": 200, "body": "<html><body><a href=\"https://preceptbiorobotics.wd108.myworkdayjobs.com/PRECEPT/job/California---San-Jose/Assembler-II_2026-R121\">Assembler II</a><a href=\"https://preceptbiorobotics.wd108.myworkdayjobs.com/PRECEPT/job/California---San-Jose/Director--Product-Management_2026-R97\">Director, Product Management</a><a href=\"https://www.linkedin.com/company/precept\">LinkedIn</a><a href=\"https://jobs.example-staffing.com/cleanroom-assembler\">Cleanroom Assembler (staffing repost)</a></body></html>"},
+    {"host": "www.precept-biorobotics.com", "path": "/careers/our-teams/manufacturing", "status": 200, "body": "<html><body><p>Our manufacturing team builds every system by hand.</p></body></html>"},
+    {"host": "preceptbiorobotics.wd108.myworkdayjobs.com", "path": "/PRECEPT/job/California---San-Jose/Assembler-II_2026-R121", "status": 200, "body": "<html><body><p>Work at the benches in cleanroom or on shop floor by performing assemblies in various product lines.</p><p>Cleanroom environment (CER) experience preferred</p></body></html>"},
+    {"host": "preceptbiorobotics.wd108.myworkdayjobs.com", "path": "/PRECEPT/job/California---San-Jose/Director--Product-Management_2026-R97", "status": 200, "body": "<html><body><p>Lead product strategy.</p></body></html>"},
+    {"host": "jobs.example-staffing.com", "path": "/cleanroom-assembler", "status": 200, "body": "<html><body><p>Our client operates a Class 7 cleanroom.</p></body></html>"}
+  ]
+}

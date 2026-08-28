@@ -1,0 +1,319 @@
+# Sector pack: medical devices
+# Generated from the team workbook, tabs 1 and 6.
+# Editing this file does NOT require re-scraping. Re-run classification only.
+
+version: medical_v1
+sector: medical_devices
+
+# ---------------------------------------------------------------------------
+# Page discovery
+# ---------------------------------------------------------------------------
+# priority: lower number wins when competing for slots
+# max_pages: per-type cap
+# Caps sum to 18 against a total cap of 10 ON PURPOSE. Not every type exists on
+# every site, so over-allocating lets the scorer fill slots from what is there.
+# Careers sits late by design: it is a fallback, crawled only when the higher
+# types leave slots free.
+#
+# NOTE: editing THIS section is not free. Everything below the raw store
+# re-runs for the price of a classify; discovery sits above it, so a pattern
+# change only reaches a domain that is crawled again.
+
+total_page_cap: 10
+
+page_types:
+  homepage:
+    priority: 0
+    max_pages: 1
+    always_fetch: true
+    patterns: []
+
+  capabilities:
+    priority: 1
+    max_pages: 2
+    patterns:
+      - capabilities
+      - what-we-do
+      - services
+      - expertise
+      - technologies
+      - our-process
+      - manufacturing-services
+      # Added 2026-08-10. biomeric-cm.com publishes "220,000 sq ft of cleanroom
+      # space" under Finished Devices / Complex Microassembly, and no pattern
+      # reached either page.
+      - finished-device
+      - finished-devices
+      - microassembly
+      - micro-assembly
+
+  manufacturing:
+    priority: 2
+    max_pages: 2
+    patterns:
+      - manufacturing
+      - production
+      - contract-manufacturing
+
+  # Added 2026-08-10. A markets-served page names the sectors a company builds
+  # for, and on a contract manufacturer that is where the medical work is
+  # described. parq.com states its cleanroom capability at
+  # /industries/life-science/medical-device-manufacturing/ and the page was
+  # never selected: it had no pattern, so a crane page took the slot instead.
+  #
+  # Its own type rather than more `capabilities` patterns, because these pages
+  # would otherwise crowd out real capability pages on the sites that have
+  # both. One slot, ahead of products, since a markets page saying "medical
+  # device manufacturing, cleanroom assembly" is worth more to this pipeline
+  # than a third product page.
+  markets:
+    priority: 3
+    max_pages: 1
+    patterns:
+      - industries
+      - industries-served
+      - markets
+      - markets-served
+      - life-science
+      - life-sciences
+      - medical-device-manufacturing
+
+  products:
+    priority: 4
+    max_pages: 3
+    patterns:
+      - products
+      - catalog
+      - catalogue
+      - solutions
+      - product-development
+      - prototyping
+
+  facilities:
+    priority: 5
+    max_pages: 2
+    patterns:
+      - facilities
+      - facility
+      - plant
+      - locations
+      - our-facility
+
+  quality:
+    priority: 6
+    max_pages: 1
+    patterns:
+      - quality
+      - certifications
+      - compliance
+      - regulatory
+
+  careers:
+    priority: 7
+    # Raised 2 -> 4, 2026-08-25. discover() now does one extra free fetch of
+    # the best careers-type candidate and harvests ITS links (see
+    # _best_of_patterns/the careers-detail pass in discover.py) so individual
+    # job postings can be selected, not just the index page. biocarta.net was
+    # misclassified no_cleanroom_needed because the real evidence (a
+    # "Manufacturing of Antibodies" job posting) lived one hop past the index
+    # page discovery selected, and 2 slots leaves no room for the posting once
+    # the index page itself takes one.
+    max_pages: 4
+    patterns:
+      - careers
+      - jobs
+      - join-us
+      - work-with-us
+
+  about:
+    priority: 8
+    max_pages: 1
+    patterns:
+      - about
+      - about-us
+      - company
+      - who-we-are
+      - our-story
+
+  # Added 2026-08-24, HANDOFF.md item 7. Public filers disclose facility
+  # detail here that never appears on the marketing site: nvea.com's 10-K
+  # states "wafer production is a cleanroom area" in a document this pipeline
+  # never crawled. Low priority and one slot, since this only exists on SEC
+  # filers, but decisive when it does: see discover.is_crawlable's `allow_pdf`
+  # parameter, which lets a PDF matching these patterns through the general
+  # PDF skip-list precisely because this type exists.
+  investors:
+    priority: 9
+    max_pages: 1
+    patterns:
+      - investors
+      - investor-relations
+      - sec-filings
+      - annual-report
+      - 10-k
+
+# ---------------------------------------------------------------------------
+# Product taxonomy
+# ---------------------------------------------------------------------------
+# weight is signal RELIABILITY, not direction. Direction comes from the list
+# the term sits in. positive -> pushes toward in_house.
+# negative -> pushes toward none.
+
+positive_products:
+  - {term: "catheters", weight: strong}
+  - {term: "implantables", weight: strong, aliases: ["implantable device", "implantable devices"]}
+  - {term: "IV and infusion sets", weight: strong, aliases: ["iv sets", "infusion sets"]}
+  - {term: "surgical disposables", weight: strong}
+  - {term: "ophthalmic devices", weight: strong}
+  - {term: "drug device combination", weight: strong}
+  - {term: "Class II", weight: strong, note: "moderate-risk, requires special controls"}
+  - {term: "Class III", weight: strong, note: "life-sustaining, highest regulation"}
+  - {term: "skin graft", weight: strong, aliases: ["tissue grafting"]}
+  - {term: "guidewires", weight: strong}
+  - {term: "stents", weight: strong, aliases: ["coronary stent", "vascular stent"]}
+  - {term: "continuous glucose monitors", weight: strong, aliases: ["CGM", "glucose monitors", "diabetes monitors", "insulin pumps"]}
+  - {term: "brain implants", weight: strong}
+  - {term: "joint replacements", weight: strong}
+  - {term: "neurostimulators", weight: strong, aliases: ["neuro implants"]}
+  - {term: "pacemakers", weight: strong, aliases: ["implantable defibrillators", "ICD"]}
+  - {term: "orthopedic implants", weight: strong, aliases: ["halo rods"]}
+  - {term: "cardiovascular implants", weight: strong, aliases: ["cardiovascular devices"]}
+  - {term: "silicone implants", weight: strong}
+  - {term: "heart valves", weight: strong}
+  - {term: "medical balloons", weight: strong}
+  # Carved out of the blanket "IVD assays" negative row below on 2026-08-25:
+  # a sealed point-of-care/microfluidic cartridge is precision-assembled and
+  # packaged like a device, not decanted like a bulk reagent kit. Found live
+  # on beebix.com's FINDER platform, where this pack's own negative row and
+  # medical_v2.2.yaml's independent `microfluidic cartridge` STRONG_INFERRED
+  # row disagreed about the same product. The two packs were never
+  # reconciled (HANDOFF_v2.2.md never references this file) — this is that
+  # reconciliation, done as granularity rather than a wholesale pack sync.
+  - {term: "microfluidic cartridge", weight: strong,
+     aliases: ["point-of-care cartridge", "poc cartridge", "lab-on-chip", "sample-to-answer cartridge"],
+     note: "sealed diagnostic cartridge requiring precision assembly — distinct from the bulk IVD reagents/kits in negative_products below"}
+
+negative_products:
+  - {term: "wheelchairs", weight: strong, aliases: ["mobility aids"]}
+  - {term: "hospital beds", weight: strong, aliases: ["furniture", "exam tables"]}
+  - {term: "walkers", weight: strong, aliases: ["crutches", "braces"]}
+  - {term: "imaging hardware", weight: medium, aliases: ["x-ray machines", "MRI", "CT scanner"]}
+  - {term: "dental chairs", weight: strong, aliases: ["dental cabinetry"]}
+  - {term: "software as medical device", weight: strong, aliases: ["SaMD"]}
+  - {term: "orthopedic instruments", weight: strong, note: "reusable, machined, sterilised at point of use"}
+  - {term: "IVD assays", weight: strong, aliases: ["diagnostics", "in vitro diagnostics"], note: "reagent handling does not imply a cleanroom facility — does not cover sealed microfluidic/point-of-care cartridges, see positive_products"}
+  - {term: "wound care", weight: strong, note: "sterile label alone does not imply in-house cleanroom"}
+  - {term: "ventilator console", weight: medium, aliases: ["ventilator system", "ventilator"], note: "capital equipment; breathing circuits are typically bought in, not made in-house"}
+  # Ruled by the user 2026-08-26, closing the open team question from the
+  # 2026-08-19 batch-1 diagnosis (Section 1 row 33, recommended-work item 7):
+  # mgxdiagnostics.com is no_cleanroom_needed. NARROW ON PURPOSE — the terms
+  # below are spirometry/PFT hygiene articles that are never labelled sterile.
+  # `breathing circuit` and `patient circuit` are deliberately NOT here:
+  # vaportheq.com is a confirmed in_house lead whose single-use patient
+  # circuits have a sterile fluid path, and a blanket respiratory-disposable
+  # negative would attack it. Sterility is the line, not the body system.
+  - {term: "pneumotach", weight: medium, aliases: ["pneumotachograph", "spirometry flow sensor", "spirometer mouthpiece"], note: "non-sterile single-patient-use spirometry consumable; a hygiene article, not a sterile barrier product. If the same item is labelled STERILE, this row does not apply"}
+  - {term: "nose clip", weight: medium, aliases: ["spirometry filter", "spirometry mouthpiece", "bacterial viral filter"], note: "non-sterile single-patient-use PFT consumable. Sterile-labelled respiratory disposables are NOT covered — see vaportheq.com"}
+
+# ---------------------------------------------------------------------------
+# Evidence vocabulary
+# ---------------------------------------------------------------------------
+# Direct signal that a controlled environment exists.
+
+evidence_terms:
+  - {term: "ISO 14644-1", weight: strong, aliases: ["ISO 14644"]}
+  - {term: "class 7", weight: strong, aliases: ["class 8", "class 10000"]}
+  - {term: "Class 1", weight: strong, aliases: ["Class 10", "Class 100", "Class 1,000", "Class 10,000", "Class 100,000"]}
+  - {term: "ISO 3", weight: strong, aliases: ["ISO 4", "ISO 5", "ISO 6", "ISO 7", "ISO 8"]}
+  - {term: "cleanroom", weight: strong, aliases: ["clean room"]}
+  - {term: "gowning", weight: strong}
+  - {term: "gown room", weight: strong}
+  - {term: "HEPA", weight: strong, aliases: ["FFU", "air changes", "ACH"]}
+  - {term: "laminar flow", weight: strong, aliases: ["laminar air"]}
+  - {term: "aseptic processing", weight: strong}
+  - {term: "controlled environment", weight: strong}
+  - {term: "critical environment", weight: strong}
+  - {term: "EtO", weight: strong, aliases: ["ethylene oxide", "gamma irradiation"], note: "may be outsourced"}
+  - {term: "particulate control", weight: strong, aliases: ["bioburden"]}
+  - {term: "pyrogen free", weight: medium, aliases: ["low endotoxin"]}
+  # European cleanroom grade notation. Absent from the 46-domain goldset and
+  # added ahead of the 500-domain run, which will hit European suppliers. The
+  # bare "Grade C" alias is the weak part: it needs context to mean anything,
+  # which is what the note is for.
+  - {term: "EU GMP Grade", weight: strong, aliases: ["Grade A", "Grade B", "Grade C", "Grade D", "GMP Grade"], note: "A/B/C/D map roughly to ISO 5/5/7/8; a bare 'Grade C' needs context"}
+  # Sterilisation and packaging standards. Unlike the ISO management-system
+  # numbers in trap_terms, these describe a process, so they are signal.
+  - {term: "ISO 11135", weight: medium, note: "EtO sterilisation validation"}
+  - {term: "ISO 11137", weight: medium, note: "radiation sterilisation validation"}
+  - {term: "ISO 11607", weight: medium, note: "sterile barrier packaging; implies sterile operations, not necessarily an in-house cleanroom"}
+  - {term: "full-service medical manufacturing", weight: medium}
+  - {term: "end-to-end contract manufacturing", weight: medium}
+  - {term: "medical device contract manufacturer", weight: medium}
+  - {term: "medical device assembly", weight: medium, aliases: ["packaging", "fabrication", "injection molding"], note: "processes usually done in a cleanroom"}
+
+# ---------------------------------------------------------------------------
+# Trap terms
+# ---------------------------------------------------------------------------
+# NEUTRAL, not negative. The classifier must see these and know to DISCOUNT
+# them. It must not subtract points. Nearly every medical device firm carries
+# these, including wheelchair manufacturers.
+#
+# THIS LIST IS NOT AN ENUMERATION AND MUST NOT BECOME ONE. Certifications are
+# an unbounded long tail: 46 goldset domains produced 57 distinct ones, and 500
+# will produce hundreds. Extraction therefore reports whatever certification a
+# page carries, verified against the page and otherwise uninterpreted, exactly
+# as `products_named` works. This list is the short set of terms the
+# CLASSIFICATION prompt names explicitly, chosen by how widely they appear
+# rather than by trying to be complete. Domain counts are from the 2026-08-10
+# goldset extraction.
+#
+# Extending this list costs a re-classify, not a re-extract.
+
+trap_terms:
+  # Management-system standards. Neutral, and the ones most often mistaken for
+  # a cleanliness class because they are spelled "ISO <number>".
+  - {term: "ISO 13485", weight: ignore}
+  - {term: "ISO 9001", weight: ignore}
+  - {term: "ISO 14001", weight: ignore, note: "environmental management; 3 goldset domains"}
+  - {term: "ISO 17025", weight: ignore, aliases: ["ISO/IEC 17025"], note: "testing and calibration labs; 2 goldset domains"}
+  - {term: "quality management system", weight: ignore, aliases: ["QMS"]}
+  # Product clearance and market access. About a device, not a facility.
+  - {term: "FDA registered", weight: ignore}
+  - {term: "FDA cleared", weight: ignore, aliases: ["FDA approved", "510(k)", "510k"]}
+  - {term: "CE Mark", weight: ignore, aliases: ["CE marking", "CE marked"]}
+  # Adjacent-industry accreditations. These signal a different industry and say
+  # nothing either way about a cleanroom. AS9100 is the widest-spread trap in
+  # the goldset, on 6 of 46 domains.
+  - {term: "AS9100", weight: ignore, aliases: ["AS9100C", "AS9100D"], note: "aerospace QMS; 6 goldset domains"}
+  - {term: "ITAR", weight: ignore, aliases: ["ITAR registered"], note: "defense export control; 2 goldset domains"}
+  # Weak rather than ignore: pharma GMP genuinely does imply controlled areas,
+  # while a device firm's "GMP" often does not.
+  - {term: "GMP compliant", weight: weak, note: "broad, verify against other evidence"}
+
+# ---------------------------------------------------------------------------
+# Outsourcing cues
+# ---------------------------------------------------------------------------
+# Push toward the `outsourced` verdict. These are the primary basis for
+# distinguishing a company that SELLS sterile product from one that MAKES it.
+
+outsourcing_cues:
+  - {term: "contract manufacturer named", weight: strong}
+  - {term: "our manufacturing partners", weight: strong, aliases: ["manufacturing partner"]}
+  - {term: "designed in", weight: strong, aliases: ["made in"], note: "designed in X, made in Y"}
+
+# ---------------------------------------------------------------------------
+# FDA cross-check (optional, phase 6+)
+# ---------------------------------------------------------------------------
+# openFDA establishment registration operation types. Use as an independent
+# verification channel, not as a gate. Disagreement with the LLM verdict is a
+# strong signal to route to review rather than trust either alone.
+
+fda_operation_types:
+  supports_outsourced:
+    - Contract Manufacturer
+    - Contract Sterilizer
+  ignore:
+    - Relabeler
+    - Reprocessor of Single Use Device
+    - Initial Importer
+    - Foreign Exporter
