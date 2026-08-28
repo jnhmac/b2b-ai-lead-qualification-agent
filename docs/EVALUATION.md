@@ -5,6 +5,8 @@ instrument honest enough to tell whether the pipeline was getting better.
 
 ## Headline numbers
 
+![Wilson 95% confidence intervals for exact-label accuracy, lead precision, lead recall and the true lead base rate on the 23-domain holdout.](intervals.svg)
+
 Measured against the Tier B holdout, 23 domains adjudicated by two independent
 readers against the live sites:
 
@@ -12,7 +14,7 @@ readers against the live sites:
 |---|---|---|
 | Exact-label accuracy | 18/23 = 78.3% | [58.1%, 90.3%] |
 | Lead precision | 9/10 = 90.0% | [59.6%, 98.2%] |
-| Lead recall | 9/12 = 75.0% | |
+| Lead recall | 9/12 = 75.0% | [46.8%, 91.1%] |
 | True lead base rate | 12/23 = 52.2% | [33.0%, 70.8%] |
 | Errors routed to manual review | 5/5 = 100% | |
 

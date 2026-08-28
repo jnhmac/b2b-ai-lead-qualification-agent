@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="One domain end to end: an unqualified list row becomes a cleanroom verdict with a verified quote, for about nine crawl credits and ten cents of inference.">
+  <style>
+    .s  { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .eb { font-size: 11.5px; fill: #6A7079; letter-spacing: 1.8px; }
+    .t1 { font-size: 30px; font-weight: 600; fill: #F3F5F8; letter-spacing: -0.4px; }
+    .t2 { font-size: 14.5px; fill: #969CA6; }
+    .st { font-size: 10.5px; fill: #565C65; letter-spacing: 1.3px; }
+    .bg { font-size: 20px; fill: #F3F5F8; font-weight: 500; }
+    .bd { font-size: 13.5px; fill: #9AA1AA; }
+    .mu { font-size: 12px; fill: #656B74; }
+    .qt { font-size: 13px; fill: #D6DBE2; }
+    .ok { font-size: 12.5px; fill: #57D9A3; }
+    .am { font-size: 12.5px; fill: #F2A03D; }
+    .fs { font-size: 13.5px; fill: #C7CCD4; }
+    .fl { font-size: 11.5px; fill: #656B74; }
+  </style>
+
+  <rect width="1200" height="630" fill="#0A0B0D"/>
+
+  <text class="m eb" x="40" y="52">CLEANROOM CLASSIFIER</text>
+  <text class="s t1" x="40" y="88">From a list nobody can sell to a lead with proof</text>
+  <text class="s t2" x="40" y="115">Medical device manufacturers, four-way cleanroom verdict, and the sentence that justifies it.</text>
+
+  <!-- 01 input -->
+  <rect x="40" y="152" width="230" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
+  <text class="m st" x="60" y="178">01 · THE LIST</text>
+  <text class="m bg" x="60" y="212">firm-082.com</text>
+  <text class="m bd" x="60" y="240">SIC 3841</text>
+  <text class="m bd" x="60" y="262">13 employees</text>
+  <line x1="60" y1="286" x2="250" y2="286" stroke="#1F232A"/>
+  <text class="s mu" x="60" y="310">One row of 433. The industry</text>
+  <text class="s mu" x="60" y="329">code covers catheter makers</text>
+  <text class="s mu" x="60" y="348">and wheelchair makers alike.</text>
+  <text class="s mu" x="60" y="380">Only one of them buys</text>
+  <text class="s mu" x="60" y="399">cleanroom consumables.</text>
+  <rect x="60" y="424" width="98" height="22" rx="5" fill="none" stroke="#2A2E35"/>
+  <text class="m" x="70" y="439" font-size="11" fill="#6A7079">UNQUALIFIED</text>
+
+  <path d="M280 307l9 9-9 9" fill="none" stroke="#3A3F47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 02 crawl -->
+  <rect x="298" y="152" width="230" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
+  <text class="m st" x="318" y="178">02 · DISCOVER + FETCH</text>
+  <text class="m bg" x="318" y="212">10 pages</text>
+  <text class="s bd" x="318" y="240">picked from 340 URLs</text>
+  <line x1="318" y1="264" x2="508" y2="264" stroke="#1F232A"/>
+  <text class="s mu" x="318" y="288">Sitemap and nav are free.</text>
+  <text class="s mu" x="318" y="307">Scoring and per-type caps</text>
+  <text class="s mu" x="318" y="326">stop a product catalogue</text>
+  <text class="s mu" x="318" y="345">taking every slot.</text>
+  <text class="s mu" x="318" y="377">Picking the pages is free.</text>
+  <text class="s mu" x="318" y="396">Reading them is not.</text>
+  <rect x="318" y="424" width="104" height="22" rx="5" fill="none" stroke="#4A3A1E"/>
+  <text class="m am" x="328" y="439" font-size="11">9 CREDITS</text>
+
+  <path d="M538 307l9 9-9 9" fill="none" stroke="#3A3F47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 03 evidence -->
+  <rect x="556" y="152" width="320" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
+  <text class="m st" x="576" y="178">03 · EXTRACT, THEN VERIFY</text>
+
+  <rect x="576" y="194" width="280" height="76" rx="7" fill="#0D0F12" stroke="#21252B"/>
+  <text class="m qt" x="590" y="217">&#8220;Our ISO Class 8 cleanroom</text>
+  <text class="m qt" x="590" y="237">supports catheter assembly</text>
+  <text class="m qt" x="590" y="257">and packaging.&#8221;</text>
+
+  <path d="M578 284l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="290">Found verbatim on the stored page</text>
+  <text class="s mu" x="596" y="309">A claim whose quote fails this check</text>
+  <text class="s mu" x="596" y="327">is dropped, and the dropped text is logged.</text>
+
+  <rect x="576" y="348" width="280" height="70" rx="7" fill="#0D0F12" stroke="#21252B"/>
+  <text class="m" x="590" y="372" font-size="13" fill="#6E747D" text-decoration="line-through">&#8220;ISO 13485 certified&#8221;</text>
+  <text class="s mu" x="590" y="394">Trap term. Carried by nearly every</text>
+  <text class="s mu" x="590" y="408">medical firm. Seen, then discounted to zero.</text>
+
+  <rect x="576" y="428" width="112" height="22" rx="5" fill="none" stroke="#4A3A1E"/>
+  <text class="m am" x="586" y="443" font-size="11">1 CALL / PAGE</text>
+
+  <path d="M886 307l9 9-9 9" fill="none" stroke="#3A3F47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 04 verdict -->
+  <rect x="904" y="152" width="256" height="322" rx="10" fill="#121815" stroke="#245243"/>
+  <text class="m st" x="924" y="178">04 · VERDICT</text>
+  <text class="m" x="924" y="216" font-size="27" font-weight="500" fill="#57D9A3">in_house</text>
+  <text class="m bd" x="924" y="246">ISO 8 &#183; confidence 0.82</text>
+  <line x1="924" y1="270" x2="1140" y2="270" stroke="#1F3A31"/>
+  <text class="s mu" x="924" y="294">Auto-accepted. The two</text>
+  <text class="s mu" x="924" y="313">independent scorers agreed,</text>
+  <text class="s mu" x="924" y="332">so no human has to look.</text>
+  <text class="s mu" x="924" y="364">Where they disagree, the row</text>
+  <text class="s mu" x="924" y="383">goes to a ranked review queue</text>
+  <text class="s mu" x="924" y="402">instead of to a salesperson.</text>
+  <rect x="924" y="424" width="128" height="22" rx="5" fill="none" stroke="#245243"/>
+  <text class="m ok" x="934" y="439" font-size="11">QUALIFIED LEAD</text>
+
+  <!-- proof strip -->
+  <rect x="40" y="506" width="1120" height="76" rx="10" fill="#101216" stroke="#1F232A"/>
+
+  <text class="m fs" x="66" y="536">~9 credits + $0.10</text>
+  <text class="s fl" x="66" y="558">total cost to qualify one domain</text>
+
+  <line x1="330" y1="524" x2="330" y2="564" stroke="#1F232A"/>
+
+  <text class="m fs" x="356" y="536">78.3%</text>
+  <text class="s fl" x="356" y="558">exact-label accuracy, 23-domain dual-reader holdout, CI [58.1, 90.3]</text>
+
+  <line x1="822" y1="524" x2="822" y2="564" stroke="#1F232A"/>
+
+  <text class="m fs" x="848" y="536">5 of 5</text>
+  <text class="s fl" x="848" y="558">wrong verdicts flagged for review, none reached a seller</text>
+
+  <text class="s fl" x="40" y="608">Python · Firecrawl · Anthropic API or OpenRouter · Pydantic · local or GCS storage · 654 offline tests</text>
+</svg>

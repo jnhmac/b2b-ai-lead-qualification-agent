@@ -1,5 +1,7 @@
 # Cleanroom classifier
 
+![One domain end to end: an unqualified list row becomes a cleanroom verdict with a verified quote, for about nine crawl credits and ten cents of inference.](docs/hero.svg)
+
 Takes a list of medical device manufacturer domains, crawls a handful of pages
 from each, and returns a four-way verdict on whether the company operates a
 cleanroom, with a verbatim quote behind every claim.
