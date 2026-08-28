@@ -36,7 +36,7 @@
   <line x1="670" y1="141" x2="670" y2="159" stroke="#5A66A8" stroke-width="1.5"/>
   <line x1="870" y1="141" x2="870" y2="159" stroke="#5A66A8" stroke-width="1.5"/>
   <circle cx="796" cy="150" r="5.5" fill="#8B9BFF" stroke="#0A0B0D" stroke-width="2"/>
-  <text class="m ci" x="950" y="155">[58.1 &#8211; 90.3]</text>
+  <text class="m ci" x="950" y="155">[58.1 to 90.3]</text>
 
   <!-- row 2: lead precision -->
   <text class="s rn" x="40" y="217">Lead precision</text>
@@ -47,7 +47,7 @@
   <line x1="680" y1="203" x2="680" y2="221" stroke="#5A66A8" stroke-width="1.5"/>
   <line x1="919" y1="203" x2="919" y2="221" stroke="#5A66A8" stroke-width="1.5"/>
   <circle cx="868" cy="212" r="5.5" fill="#8B9BFF" stroke="#0A0B0D" stroke-width="2"/>
-  <text class="m ci" x="950" y="217">[59.6 &#8211; 98.2]</text>
+  <text class="m ci" x="950" y="217">[59.6 to 98.2]</text>
 
   <!-- row 3: lead recall -->
   <text class="s rn" x="40" y="279">Lead recall</text>
@@ -58,7 +58,7 @@
   <line x1="600" y1="265" x2="600" y2="283" stroke="#5A66A8" stroke-width="1.5"/>
   <line x1="875" y1="265" x2="875" y2="283" stroke="#5A66A8" stroke-width="1.5"/>
   <circle cx="775" cy="274" r="5.5" fill="#8B9BFF" stroke="#0A0B0D" stroke-width="2"/>
-  <text class="m ci" x="950" y="279">[46.8 &#8211; 91.1]</text>
+  <text class="m ci" x="950" y="279">[46.8 to 91.1]</text>
 
   <!-- separator -->
   <line x1="40" y1="320" x2="1060" y2="320" stroke="#1A1D22"/>
@@ -74,7 +74,7 @@
   <line x1="515" y1="355" x2="515" y2="373" stroke="#4C525C" stroke-width="1.5"/>
   <line x1="749" y1="355" x2="749" y2="373" stroke="#4C525C" stroke-width="1.5"/>
   <circle cx="634" cy="364" r="5.5" fill="#8A919B" stroke="#0A0B0D" stroke-width="2"/>
-  <text class="m ci" x="950" y="369">[33.0 &#8211; 70.8]</text>
+  <text class="m ci" x="950" y="369">[33.0 to 70.8]</text>
 
   <!-- axis -->
   <text class="m ax" x="310" y="416" text-anchor="middle">0%</text>

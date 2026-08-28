@@ -3,9 +3,9 @@ requires = ["hatchling==1.28.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cleanroom-classifier"
+name = "website-lead-qualifier"
 version = "0.1.0"
-description = "Four-way cleanroom verdicts for medical device manufacturer domains, with verbatim evidence."
+description = "Reads a company website and returns a qualification verdict with the verbatim sentence behind it."
 requires-python = ">=3.11"
 
 # Pinned exactly. This pipeline is re-run against stored raw pages for months;

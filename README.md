@@ -1,10 +1,15 @@
-# Cleanroom classifier
+# Website lead qualifier
 
 ![One domain end to end: an unqualified list row becomes a cleanroom verdict with a verified quote, for about nine crawl credits and ten cents of inference.](docs/hero.svg)
 
-Takes a list of medical device manufacturer domains, crawls a handful of pages
-from each, and returns a four-way verdict on whether the company operates a
-cleanroom, with a verbatim quote behind every claim.
+Takes a list of company domains, crawls a handful of pages from each, and
+returns a qualification verdict with the verbatim sentence that justifies it.
+
+The shipped configuration qualifies medical device manufacturers on whether they
+operate a cleanroom, which is the sector pack it was built and measured against.
+The sector is config, not code: a different market means a different YAML file,
+not a different codebase. That is also why the Python package is still called
+`cleanroom`: inside the code, that word means the thing being detected.
 
 Labels: `in_house` / `likely_in_house` / `outsourced` / `no_cleanroom_needed` /
 `unknown`. Optimised for precision over recall, because the cost of a wrong
@@ -147,15 +152,53 @@ The test suite is fully offline. The GCS backend runs against an in-memory
 double of the Google client, so both storage backends are exercised in CI with
 no bucket and no credentials.
 
+## Where this fits
+
+Qualification is one stage of a larger go-to-market pipeline. This repository is
+the middle of it, and it is deliberately the only stage that is not a vendor
+integration:
+
+```
+Leadfeeder                  website-lead-qualifier         lead enrichment              HubSpot
+visitor identification  ->  is this company a fit,     ->  contacts, firmographics  ->  CRM records
+who landed on the site      and what is the proof          for the ones worth it        and workflows
+```
+
+The ordering is the point. Identification tells you a company visited. It does
+not tell you whether they are worth a salesperson's time, and enrichment is
+priced per record, so enriching everything means paying to enrich the
+unqualified. Putting qualification between the two means only companies that
+passed the evidence test get enriched and written to the CRM, and every record
+that lands there arrives with the sentence that justified it.
+
+**Next**, in order:
+
+1. **An input adapter for visitor identification.** Take identified domains as
+   they arrive rather than a static CSV, and run them through the existing
+   idempotency-by-crawl-date path so a repeat visitor costs nothing.
+2. **Hand off to enrichment.** Pass only `in_house` and `likely_in_house`
+   verdicts downstream, so enrichment spend tracks qualification rather than
+   traffic.
+3. **Write to the CRM.** Verdict, confidence, evidence quote and source URL onto
+   the company record. `likely_in_house` never auto-writes; it queues for review
+   first, which is the same gate the evaluation measures today.
+4. **Finish the conditional crawl ladder.** Steps 2 to 4 exist as `xfail`
+   acceptance tests; they escalate to investor-relations pages and job postings
+   only when the cheap pass is inconclusive.
+
+None of the integration stages are built here, and
+[BUILD.md](BUILD.md) scopes them out on purpose: an engine that is easy to test
+offline is worth more than one wired to four vendors.
+
 ## Further reading
 
-- [BUILD.md](BUILD.md) — the original build spec, written before any code, and
+- [BUILD.md](BUILD.md): the original build spec, written before any code, and
   the phase gates each stage had to pass
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — module map, data flow, the
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): module map, data flow, the
   storage and provider seams
-- [docs/EVALUATION.md](docs/EVALUATION.md) — how accuracy is measured, and why
+- [docs/EVALUATION.md](docs/EVALUATION.md): how accuracy is measured, and why
   the harness reports its own circularity
-- [docs/DESIGN-DECISIONS.md](docs/DESIGN-DECISIONS.md) — the judgment calls,
+- [docs/DESIGN-DECISIONS.md](docs/DESIGN-DECISIONS.md): the judgment calls,
   including the ones that were wrong first
 
 ## Notes on this repository
