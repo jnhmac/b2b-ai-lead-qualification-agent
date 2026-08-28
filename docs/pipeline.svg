@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="Six-stage pipeline: normalize and discover are free, fetch, extract and classify are metered, evaluate is free.">
+  <style>
+    .s  { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .t1 { font-size: 24px; font-weight: 600; fill: #F3F5F8; letter-spacing: -0.3px; }
+    .t2 { font-size: 13.5px; fill: #969CA6; }
+    .eb { font-size: 11px; fill: #6A7079; letter-spacing: 1.6px; }
+    .nm { font-size: 15px; font-weight: 600; fill: #F3F5F8; }
+    .dc { font-size: 11.5px; fill: #8D939D; }
+    .ix { font-size: 10px; fill: #4E545D; }
+    .cf { font-size: 9.5px; fill: #6A7079; letter-spacing: 0.6px; }
+    .ca { font-size: 9.5px; fill: #F2A03D; letter-spacing: 0.6px; }
+    .gl { font-size: 10px; fill: #F2A03D; letter-spacing: 1.2px; }
+    .pt { font-size: 11px; fill: #C7CCD4; }
+    .pc { font-size: 10.5px; fill: #6A7079; }
+    .hd { font-size: 10.5px; fill: #8B9BFF; letter-spacing: 1.2px; }
+  </style>
+
+  <rect width="1200" height="480" rx="14" fill="#0A0B0D"/>
+
+  <text class="m eb" x="40" y="46">CLEANROOM-CLASSIFIER</text>
+  <text class="s t1" x="40" y="78">Six stages, one money boundary</text>
+  <text class="s t2" x="40" y="103">Each stage writes to disk before the next one reads. Discovery is free, and it decides what gets paid for.</text>
+
+  <!-- metered group -->
+  <rect x="428" y="134" width="534" height="162" rx="12" fill="#F2A03D" fill-opacity="0.03" stroke="#6B4E23" stroke-width="1" stroke-dasharray="5 4"/>
+  <rect x="444" y="127" width="228" height="14" fill="#0A0B0D"/>
+  <text class="m gl" x="452" y="138">METERED · EVERY CALL BILLS</text>
+
+  <!-- 01 normalize -->
+  <rect x="86" y="150" width="150" height="130" rx="10" fill="#131519" stroke="#262A31"/>
+  <text class="m ix" x="100" y="172">01</text>
+  <rect x="181" y="161" width="41" height="16" rx="4" fill="none" stroke="#262A31"/>
+  <text class="m cf" x="188" y="172">FREE</text>
+  <text class="s nm" x="100" y="202">normalize</text>
+  <text class="s dc" x="100" y="224">URLs to registrable</text>
+  <text class="s dc" x="100" y="240">domains. Duplicates</text>
+  <text class="s dc" x="100" y="256">reported, not hidden.</text>
+
+  <path d="M243 215l8 8-8 8" fill="none" stroke="#3A3F47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 02 discover -->
+  <rect x="264" y="150" width="150" height="130" rx="10" fill="#131519" stroke="#262A31"/>
+  <text class="m ix" x="278" y="172">02</text>
+  <rect x="359" y="161" width="41" height="16" rx="4" fill="none" stroke="#262A31"/>
+  <text class="m cf" x="366" y="172">FREE</text>
+  <text class="s nm" x="278" y="202">discover</text>
+  <text class="s dc" x="278" y="224">Sitemap and nav,</text>
+  <text class="s dc" x="278" y="240">scored and capped</text>
+  <text class="s dc" x="278" y="256">per page type.</text>
+
+  <path d="M421 215l8 8-8 8" fill="none" stroke="#3A3F47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 03 fetch -->
+  <rect x="442" y="150" width="150" height="130" rx="10" fill="#17191E" stroke="#2C2F36"/>
+  <text class="m ix" x="456" y="172">03</text>
+  <rect x="502" y="161" width="76" height="16" rx="4" fill="none" stroke="#4A3A1E"/>
+  <text class="m ca" x="509" y="172">~9 CREDITS</text>
+  <text class="s nm" x="456" y="202">fetch</text>
+  <text class="s dc" x="456" y="224">Scrape to markdown</text>
+  <text class="s dc" x="456" y="240">on disk, rate limited,</text>
+  <text class="s dc" x="456" y="256">under a budget stop.</text>
+
+  <path d="M599 215l8 8-8 8" fill="none" stroke="#5A4526" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 04 extract -->
+  <rect x="620" y="150" width="150" height="130" rx="10" fill="#17191E" stroke="#2C2F36"/>
+  <text class="m ix" x="634" y="172">04</text>
+  <rect x="676" y="161" width="80" height="16" rx="4" fill="none" stroke="#4A3A1E"/>
+  <text class="m ca" x="683" y="172">1 CALL/PAGE</text>
+  <text class="s nm" x="634" y="202">extract</text>
+  <text class="s dc" x="634" y="224">Reports what a page</text>
+  <text class="s dc" x="634" y="240">says. Every claim</text>
+  <text class="s dc" x="634" y="256">carries a quote.</text>
+
+  <path d="M777 215l8 8-8 8" fill="none" stroke="#5A4526" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 05 classify -->
+  <rect x="798" y="150" width="150" height="130" rx="10" fill="#17191E" stroke="#2C2F36"/>
+  <text class="m ix" x="812" y="172">05</text>
+  <rect x="848" y="161" width="86" height="16" rx="4" fill="none" stroke="#4A3A1E"/>
+  <text class="m ca" x="855" y="172">1 CALL/DOMAIN</text>
+  <text class="s nm" x="812" y="202">classify</text>
+  <text class="s dc" x="812" y="224">The verdict, plus a</text>
+  <text class="s dc" x="812" y="240">deterministic second</text>
+  <text class="s dc" x="812" y="256">opinion.</text>
+
+  <path d="M971 215l8 8-8 8" fill="none" stroke="#3A3F47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 06 evaluate -->
+  <rect x="990" y="150" width="150" height="130" rx="10" fill="#131519" stroke="#262A31"/>
+  <text class="m ix" x="1004" y="172">06</text>
+  <rect x="1085" y="161" width="41" height="16" rx="4" fill="none" stroke="#262A31"/>
+  <text class="m cf" x="1092" y="172">FREE</text>
+  <text class="s nm" x="1004" y="202">evaluate</text>
+  <text class="s dc" x="1004" y="224">Scored against a</text>
+  <text class="s dc" x="1004" y="240">holdout, with intervals</text>
+  <text class="s dc" x="1004" y="256">and significance tests.</text>
+
+  <!-- store strip -->
+  <rect x="40" y="326" width="1120" height="114" rx="12" fill="#101216" stroke="#1F232A"/>
+  <ellipse cx="64" cy="352" rx="7" ry="2.8" fill="none" stroke="#8B9BFF" stroke-width="1.2"/>
+  <path d="M57 352v10c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-10" fill="none" stroke="#8B9BFF" stroke-width="1.2"/>
+  <path d="M57 357c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8" fill="none" stroke="#8B9BFF" stroke-width="1.2"/>
+  <text class="m hd" x="80" y="356">WRITTEN TO THE STORE</text>
+  <text class="s pc" x="235" y="356">identical under a local root or a bucket</text>
+
+  <text class="m pt" x="64" y="392">raw/{domain}/{crawl_date}/manifest.json</text>
+  <text class="s pc" x="64" y="412">what was crawled, per domain</text>
+
+  <text class="m pt" x="344" y="392">raw/{domain}/{crawl_date}/{hash}.md</text>
+  <text class="s pc" x="344" y="412">the text every quote is checked against</text>
+
+  <text class="m pt" x="624" y="392">extractions/pack={pack}/run={id}/</text>
+  <text class="s pc" x="624" y="412">findings and their quotes</text>
+
+  <text class="m pt" x="904" y="392">classifications/pack={pack}/run={id}/</text>
+  <text class="s pc" x="904" y="412">verdicts, confidence, review flags</text>
+
+  <text class="s pc" x="40" y="464">Raw pages are keyed by crawl date, never by pack version, so a prompt revision costs three minutes and two dollars instead of a four-hour re-crawl.</text>
+</svg>

@@ -58,16 +58,7 @@ Six stages, each of which writes to disk before the next one reads. Everything
 below the raw store is cheap to re-run and everything above it is not, which is
 the constraint the whole design is organised around.
 
-```
-domains  ->  normalize  ->  discover  ->  fetch  ->  extract  ->  classify  ->  evaluate
-                 |             |            |          |             |             |
-          registrable    up to 10      Firecrawl    one LLM      one LLM      accuracy vs
-            domain,       pages per    scrape to    call per     call per     a held-out
-           deduped        domain,      markdown     page,        domain,      labelled set
-                          scored,      on disk      verbatim     scored       with CIs and
-                          free                      quotes       against a    significance
-                                                    verified     sector pack  testing
-```
+![Six-stage pipeline. Normalize and discover are free, fetch, extract and classify are metered, evaluate is free. Each stage writes to the store before the next one reads.](docs/pipeline.svg)
 
 1. **Normalize.** URLs to registrable domains, redirects resolved, duplicates
    collapsed and reported rather than hidden. Nothing is filtered out here.
