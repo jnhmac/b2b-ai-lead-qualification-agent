@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="The pipeline: free discovery, a two-page read with three exits, four guards, the full read only when needed, then the agent review, the owner's approval and a free hand-over.">
+  <style>
+    .s  { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .t1 { font-size: 24px; font-weight: 600; fill: #F3F5F8; letter-spacing: -0.3px; }
+    .t2 { font-size: 13.5px; fill: #969CA6; }
+    .eb { font-size: 11px; fill: #6A7079; letter-spacing: 1.6px; }
+    .nm { font-size: 14px; font-weight: 600; fill: #F3F5F8; }
+    .dc { font-size: 11px; fill: #8D939D; }
+    .ix { font-size: 10px; fill: #4E545D; }
+    .cf { font-size: 9.5px; fill: #6A7079; letter-spacing: 0.6px; }
+    .ca { font-size: 9.5px; fill: #F2A03D; letter-spacing: 0.6px; }
+    .cg { font-size: 9.5px; fill: #57D9A3; letter-spacing: 0.6px; }
+    .cb { font-size: 9.5px; fill: #8B9BFF; letter-spacing: 0.6px; }
+    .pt { font-size: 11px; fill: #C7CCD4; }
+    .pc { font-size: 10.5px; fill: #6A7079; }
+  </style>
+
+  <rect width="1200" height="480" rx="14" fill="#0A0B0D"/>
+
+  <text class="m eb" x="40" y="46">WEBSITE LEAD QUALIFIER</text>
+  <text class="s t1" x="40" y="78">Buy pages only where the answer is not yet known</text>
+  <text class="s t2" x="40" y="103">Each stage writes to disk before the next one reads. Agents judge; the owner decides; nothing is applied automatically.</text>
+
+  <!-- 01 discover -->
+  <rect x="40" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#1F232A"/>
+  <text class="m ix" x="56" y="162">01</text>
+  <text class="s nm" x="56" y="186">Discover</text>
+  <text class="s dc" x="56" y="208">Sitemap and nav.</text>
+  <text class="s dc" x="56" y="224">10 pages shortlisted,</text>
+  <text class="s dc" x="56" y="240">nothing bought.</text>
+  <text class="m cf" x="56" y="274">FREE</text>
+
+  <!-- 02 step 1 -->
+  <rect x="202" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#6B4E23"/>
+  <text class="m ix" x="218" y="162">02</text>
+  <text class="s nm" x="218" y="186">Read two pages</text>
+  <text class="s dc" x="218" y="208">Homepage and best</text>
+  <text class="s dc" x="218" y="224">product page.</text>
+  <text class="s dc" x="218" y="240">Exit A, B or C.</text>
+  <text class="m ca" x="218" y="274">2 CREDITS</text>
+
+  <!-- 03 guards -->
+  <rect x="364" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#1F232A"/>
+  <text class="m ix" x="380" y="162">03</text>
+  <text class="s nm" x="380" y="186">Four guards</text>
+  <text class="s dc" x="380" y="208">Not an image, a clean</text>
+  <text class="s dc" x="380" y="224">environment, verbatim,</text>
+  <text class="s dc" x="380" y="240">the company's own.</text>
+  <text class="m ca" x="380" y="274">INFERENCE</text>
+
+  <!-- 04 step 2 -->
+  <rect x="526" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#6B4E23"/>
+  <text class="m ix" x="542" y="162">04</text>
+  <text class="s nm" x="542" y="186">Full read</text>
+  <text class="s dc" x="542" y="208">Only for exit C or a</text>
+  <text class="s dc" x="542" y="224">refused guard. The</text>
+  <text class="s dc" x="542" y="240">verdict is settled.</text>
+  <text class="m ca" x="542" y="274">8 CREDITS</text>
+
+  <!-- 05 agent review -->
+  <rect x="688" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#2E3566"/>
+  <text class="m ix" x="704" y="162">05</text>
+  <text class="s nm" x="704" y="186">Agent review</text>
+  <text class="s dc" x="704" y="208">Expert re-judges blind.</text>
+  <text class="s dc" x="704" y="224">Diagnostician names</text>
+  <text class="s dc" x="704" y="240">each cause and fix.</text>
+  <text class="m cb" x="704" y="274">INFERENCE ONLY</text>
+
+  <!-- 06 owner -->
+  <rect x="850" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#2E3566"/>
+  <text class="m ix" x="866" y="162">06</text>
+  <text class="s nm" x="866" y="186">Owner approval</text>
+  <text class="s dc" x="866" y="208">One sheet, at most</text>
+  <text class="s dc" x="866" y="224">20 items, one yes or</text>
+  <text class="s dc" x="866" y="240">no each.</text>
+  <text class="m cb" x="866" y="274">A PERSON</text>
+
+  <!-- 07 hand-over -->
+  <rect x="1012" y="140" width="150" height="150" rx="10" fill="#121815" stroke="#245243"/>
+  <text class="m ix" x="1028" y="162">07</text>
+  <text class="s nm" x="1028" y="186">Hand-over</text>
+  <text class="s dc" x="1028" y="208">Integrity check, then</text>
+  <text class="s dc" x="1028" y="224">one workbook per</text>
+  <text class="s dc" x="1028" y="240">source list.</text>
+  <text class="m cg" x="1028" y="274">FREE</text>
+
+  <!-- arrows -->
+  <path d="M192 215h8M354 215h8M516 215h8M678 215h8M840 215h8M1002 215h8" stroke="#3A3F47" stroke-width="1.6"/>
+
+  <!-- early exit bypass -->
+  <path d="M277 290v40h470v-38" fill="none" stroke="#57D9A3" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <path d="M742 298l5-6 5 6" fill="none" stroke="#57D9A3" stroke-width="1.4"/>
+  <text class="s pt" x="300" y="352">Exit A or B with every guard passed: stop at two pages and go straight to review.</text>
+
+  <!-- notes -->
+  <line x1="40" y1="384" x2="1160" y2="384" stroke="#1F232A"/>
+  <text class="s pc" x="40" y="410">A company costs 2 credits or 10, never anything in between by choice. Credits track how many companies settle early.</text>
+  <text class="s pc" x="40" y="430">Pages stay on disk keyed by crawl date, so any fix is replayed on stored companies for inference only before it ships.</text>
+  <text class="s pc" x="40" y="450">No crawl starts without the owner's yes at the spend gate. Agents propose; only the owner adopts.</text>
+</svg>
