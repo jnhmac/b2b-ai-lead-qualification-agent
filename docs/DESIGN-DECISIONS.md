@@ -183,9 +183,12 @@ to nine credits. Credits follow roughly `10 - 8 x early-exit rate`.
 
 ## A refused guard is not a "no"
 
-Four guards stand between a quote and a proven qualified lead: not an image
-filename, describes a controlled environment, verbatim on the page, and
-attributed to the company itself. A refusal cancels the early exit and sends
+Six checks stand between a quote and a proven qualified lead: not an image
+filename, describes a controlled environment, verbatim on the page, the
+company as the subject, not seller wording, and attributed to the company
+itself by a second model. A quote that passes is then graded: thin wording,
+with no class or room named, makes a likely qualified lead rather than proof.
+A refusal cancels the early exit and sends
 the company to the full read. It never settles the row, because the cost of a
 refused guard should be eight credits, not a lost lead.
 

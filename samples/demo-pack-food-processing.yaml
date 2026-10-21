@@ -2,7 +2,7 @@
 #
 # An excerpt written for this case study to show plug and play. It has the
 # same shape as the production medical device pack (about 1,100 terms); only
-# the vocabulary changes. The crawler, the four guards, the agents and the
+# the vocabulary changes. The crawler, the six checks, the agents and the
 # workbook read it unchanged.
 #
 # The buyer is the same kind of customer: a plant whose own controlled zone

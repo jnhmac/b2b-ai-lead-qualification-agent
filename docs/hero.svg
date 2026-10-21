@@ -57,24 +57,27 @@
 
   <!-- 03 guards -->
   <rect x="556" y="152" width="320" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
-  <text class="m st" x="576" y="178">03 · FOUR GUARDS</text>
+  <text class="m st" x="576" y="178">03 · SIX CHECKS</text>
 
   <rect x="576" y="194" width="280" height="76" rx="7" fill="#0D0F12" stroke="#21252B"/>
   <text class="m qt" x="590" y="217">&#8220;Our ISO Class 7 cleanroom</text>
   <text class="m qt" x="590" y="237">supports catheter assembly</text>
   <text class="m qt" x="590" y="257">and packaging.&#8221;</text>
 
-  <path d="M578 288l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="s ok" x="596" y="294">A sentence, not an image name</text>
-  <path d="M578 312l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="s ok" x="596" y="318">Describes a controlled environment</text>
-  <path d="M578 336l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="s ok" x="596" y="342">Verbatim on the stored page</text>
-  <path d="M578 360l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="s ok" x="596" y="366">The company's own room</text>
+  <path d="M578 278l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="284">A sentence, not an image name</text>
+  <path d="M578 298l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="304">Names a controlled environment</text>
+  <path d="M578 318l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="324">Verbatim on the stored page</text>
+  <path d="M578 338l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="344">The company is the subject</text>
+  <path d="M578 358l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="364">Not a sales pitch</text>
+  <path d="M578 378l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="s ok" x="596" y="384">A second model: their own room</text>
 
-  <text class="s mu" x="576" y="396">A refused guard is not a no. The</text>
-  <text class="s mu" x="576" y="414">company goes to the full read.</text>
+  <text class="s mu" x="576" y="412">A refused check sends it to the full read.</text>
 
   <rect x="576" y="428" width="124" height="22" rx="5" fill="none" stroke="#4A3A1E"/>
   <text class="m am" x="586" y="443" font-size="11">INFERENCE ONLY</text>

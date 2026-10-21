@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="The pipeline: free discovery, a two-page read with three exits, four guards, the full read only when needed, then the agent review, the owner's approval and a free hand-over.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="The pipeline: free discovery, a two-page read with three exits, six checks, the full read only when needed, then the agent review, the owner's approval and a free hand-over.">
   <style>
     .s  { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
     .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
@@ -43,10 +43,10 @@
   <!-- 03 guards -->
   <rect x="364" y="140" width="150" height="150" rx="10" fill="#101216" stroke="#1F232A"/>
   <text class="m ix" x="380" y="162">03</text>
-  <text class="s nm" x="380" y="186">Four guards</text>
-  <text class="s dc" x="380" y="208">Not an image, a clean</text>
-  <text class="s dc" x="380" y="224">environment, verbatim,</text>
-  <text class="s dc" x="380" y="240">the company's own.</text>
+  <text class="s nm" x="380" y="186">Six checks</text>
+  <text class="s dc" x="380" y="208">Image name, words,</text>
+  <text class="s dc" x="380" y="224">verbatim, subject,</text>
+  <text class="s dc" x="380" y="240">pitch, whose room.</text>
   <text class="m ca" x="380" y="274">INFERENCE</text>
 
   <!-- 04 step 2 -->

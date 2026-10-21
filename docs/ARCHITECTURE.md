@@ -1,6 +1,6 @@
 # Architecture
 
-A free discovery pass, a two-step crawl with four guards, an agent review and
+A free discovery pass, a two-step crawl with six checks, an agent review and
 a workbook build. Every stage is a batch job that writes to a date-keyed store
 before the next one reads, and nothing holds state in memory between stages.
 
@@ -18,7 +18,7 @@ discover ────── free ──────► 10 pages shortlisted, not
       v
 step 1 ──────── 2 credits ─► homepage + best product page, one model read
       │                      exit A: own cleanroom    ─┐
-      │                      exit B: cannot need one  ─┼─ four guards, then stop
+      │                      exit B: cannot need one  ─┼─ six checks, then stop
       │                      exit C: not settled      ─┘  a refused guard falls through
       v
 step 2 ──────── 8 credits ─► the rest of the shortlist, verdict settled
@@ -49,7 +49,7 @@ The hand-over costs nothing and can be rebuilt at any time.
 | `llm` | Structured-output calls through OpenRouter or the Anthropic API, one parse path, pinned temperature and seed |
 | `discover` | Sitemap and nav harvest, URL scoring, per-type caps, priority for pages that name a cleanroom |
 | `fetch` | Firecrawl scrape, the two-page checkpoint, per-company credit accounting, rate limit, budget stop |
-| `ladder` | Step 1, exits A, B and C, the four guards, step 2 and the verdict |
+| `ladder` | Step 1, exits A, B and C, the six checks, step 2 and the verdict |
 | `manifest` | The per-company crawl record that carries the verdict and its evidence |
 | `extract` | Per-page extraction and verbatim quote verification |
 | `classify` | Review gating and confidence bands |

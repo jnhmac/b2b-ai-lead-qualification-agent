@@ -59,15 +59,21 @@ Every page read costs a crawl credit, so the crawler buys pages in two steps.
 A company therefore costs two pages or ten, and the batch's credit bill tracks
 how many companies can be settled early.
 
-### Check every positive claim four ways
+### Check every positive claim six ways
 
-A quote has to pass four guards before it can make a company a qualified lead
+A quote has to pass six checks before it can make a company a qualified lead
 with proof:
 
 1. It is a sentence, not an image filename.
 2. It describes a controlled environment at all.
 3. It appears character for character on the stored page.
-4. A second model, given every stored page, confirms whose cleanroom it is.
+4. The company is the subject of the sentence.
+5. It is not sales wording aimed at the reader's cleanroom.
+6. A second model, given every stored page, confirms whose cleanroom it is.
+
+A quote that passes all six is then graded: it is proof (`in_house`) when it
+names a cleanroom class or room, and a likely qualified lead when the wording
+is thin.
 
 A refused guard is not a "no". It cancels the early exit and sends the company
 to the full ten-page read, because the cost of a refused guard should be eight
@@ -91,7 +97,7 @@ reasoning goes into a knowledge file the expert reads every session, so the
 agents improve because their rule book grows, never because they rewrite
 themselves.
 
-![The pipeline: free discovery, a two-page read with three exits, four guards, the full read only when needed, then the agent review and the owner's approval.](docs/pipeline.svg)
+![The pipeline: free discovery, a two-page read with three exits, six checks, the full read only when needed, then the agent review and the owner's approval.](docs/pipeline.svg)
 
 ### One batch, end to end
 
