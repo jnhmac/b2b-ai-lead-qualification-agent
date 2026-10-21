@@ -1,0 +1,156 @@
+# Demo sector pack: semiconductor and electronics manufacturers.
+#
+# An excerpt written for this case study to show plug and play. It has the
+# same shape as the production medical device pack (about 1,100 terms); only
+# the vocabulary changes. The question stays the same, does this company run
+# a cleanroom of its own, and so do the crawler, the six checks, the agents
+# and the workbook.
+#
+# What changes is what a cleanroom looks like on these sites: fabs and
+# assembly lines quote ISO 3 to 6 or Class 1 to 1,000, far cleaner than the
+# ISO 7 and 8 rooms common in medical device work, and the products that
+# imply one are wafers, dies and optics rather than catheters and implants.
+
+version: semiconductor_demo_v0.1
+sector: semiconductor
+term_count: 35   # this excerpt only
+
+scoring:
+  bands:
+    in_house: score >= 10 AND at least one DIRECT term with the company as subject
+    likely_in_house: score 6-9 with no DIRECT term; OR any STRONG positive product with
+      no outsourcing cue and no negative determination. Always needs_manual_review
+    outsourced: a company-subject OUTSOURCED_CUE outranks the cleanroom evidence
+    no_cleanroom_needed: negative_subtotal <= -8 AND at least one negative_products term
+      matched AND no STRONG positive product present
+    unknown: everything else
+  weights:
+    DIRECT_possessive: 10
+    DIRECT_bare: 7
+    STRONG_INFERRED: 5
+    MEDIUM_INFERRED: 3
+    WEAK_INFERRED: 1
+    TRAP: 0
+    NEGATIVE: -4
+    OUTSOURCED_CUE: -5
+    SELLER: -6
+
+attribution_rules:
+- Cleanroom evidence counts only when the grammatical subject is the company.
+- A fabless company that names its foundry has outsourced the cleanroom; the
+  foundry is the qualified lead.
+- A sentence about the customer's fab (your production line, your cleanroom)
+  is never facility evidence about the company.
+
+evidence_direct:
+- term: class 100 cleanroom
+  tier: DIRECT
+  weight: 10
+  match: regex
+  variants:
+  - class (1|10|100|1,?000) clean ?room
+  - iso ?[3-6] clean ?room
+  - our (fab|wafer fab|clean ?room fab)
+  - mini-?environment
+  pages:
+  - facilities
+  - manufacturing
+  - capabilities
+  - careers
+  term_pattern: \bclass\ 100\ clean\ ?room\b
+
+positive_products:
+- term: wafer fabrication
+  tier: STRONG_INFERRED
+  weight: 5
+  match: literal
+  variants:
+  - wafer processing
+  - thin film deposition
+  - photolithography
+  - die attach
+  pages:
+  - products
+  - capabilities
+- term: mems devices
+  tier: STRONG_INFERRED
+  weight: 5
+  match: literal
+  variants:
+  - optical coatings
+  - laser diodes
+  pages:
+  - products
+
+negative_products:
+- term: cable assemblies
+  tier: NEGATIVE
+  weight: -4
+  match: literal
+  variants:
+  - wire harnesses
+  - enclosures
+  - power supplies
+  pages:
+  - products
+
+trap_terms:
+# Carried by nearly every electronics manufacturer. Seen, then discounted to zero.
+- term: iso 9001
+  tier: TRAP
+  weight: 0
+  match: literal
+  variants:
+  - ipc-a-610
+  - rohs compliant
+  - esd protected area
+  - as9100
+  pages:
+  - quality
+
+seller_cues:
+- term: for your cleanroom
+  tier: SELLER
+  weight: -6
+  match: literal
+  variants:
+  - cleanroom-compatible
+  - designed for fab environments
+  pages:
+  - products
+  - markets
+
+outsourcing_cues:
+- term: our foundry partner
+  tier: OUTSOURCED_CUE
+  weight: -5
+  match: literal
+  variants:
+  - fabless
+  - manufactured for us by
+  pages:
+  - about
+  - products
+
+careers_titles:
+- term: cleanroom technician
+  tier: DIRECT
+  weight: 7
+  match: literal
+  variants:
+  - fab technician
+  - photolithography operator
+  pages:
+  - careers
+
+discovery_paths:
+- term: /fab
+  tier: ROUTING
+  weight: 0
+  match: literal
+  variants:
+  - /facilities
+  - /cleanroom
+  - /manufacturing
+  pages:
+  - facilities

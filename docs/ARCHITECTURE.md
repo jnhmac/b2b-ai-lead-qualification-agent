@@ -131,4 +131,4 @@ validates loudly. A term in two lists is a hard error, because a term in two
 lists has no defined direction.
 
 A second market means a second pack. See the excerpt in
-[samples/demo-pack-food-processing.yaml](../samples/demo-pack-food-processing.yaml).
+[samples/demo-pack-semiconductor.yaml](../samples/demo-pack-semiconductor.yaml).

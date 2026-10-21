@@ -173,16 +173,18 @@ medical device cleanrooms lives in one sector pack: the products that imply
 a cleanroom, the products that rule one out, the trap terms everyone in the
 sector carries, the outsourcing cues and the page types worth reading.
 
-A new market means a new pack. [samples/demo-pack-food-processing.yaml](samples/demo-pack-food-processing.yaml)
-is an excerpt for a different buyer of the same kind of consumables: food and
-beverage processors with high-care production zones. The crawler, the guards,
-the agents and the workbook stay as they are.
+A new market means a new pack. [samples/demo-pack-semiconductor.yaml](samples/demo-pack-semiconductor.yaml)
+is an excerpt for the next cleanroom segment: semiconductor and electronics
+manufacturers. The question stays the same, does this company run a cleanroom
+of its own; what changes is the vocabulary, such as Class 100 fabs, wafers and
+fabless companies that name their foundry. The crawler, the six checks, the
+agents and the workbook stay as they are.
 
 ## What I'd do next
 
-1. **A second segment.** Semiconductor and electronics manufacturers. The
-   knowledge file was written to carry over; the prompts and product lists
-   need a pack of their own.
+1. **Run the semiconductor segment.** The demo pack is a start. The knowledge
+   file was written to carry over, but the prompts are still worded for
+   medical devices and need their own version.
 2. **Enrichment for qualified leads only.** Contact enrichment is priced per
    record, so it should run after qualification, not before.
 3. **Measure the sales outcome.** Every number here is the pipeline's own
