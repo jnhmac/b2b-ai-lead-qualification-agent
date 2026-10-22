@@ -167,7 +167,7 @@ whichever one finished last. Stealth-proxy pages bill five credits instead of
 one; they are rare on these sites, which is exactly why every one is logged and
 counted in the manifest.
 
-## The crawl buys two pages, then eight
+## Two pages first, all ten only if unsure
 
 The first version fetched ten pages for every company and extracted each one.
 The current crawl buys two, the homepage and the best product page, decides
@@ -231,6 +231,28 @@ No agent edits a verdict, a rule or the engine, and none can spend. The run
 operator stops at a spend gate and writes a sheet of at most 20 decisions.
 This is slower than applying the expert's answers automatically, and it is why
 the rule book can be trusted: every ruling in it was made by a person.
+
+## Agreements stop at a script
+
+The expert re-judges every company blind, but no person reads its answers
+row by row. A script compares them with the current hand-over, and only the
+rows where the two differ go on: to the diagnostician, which names the cause
+and the smallest fix, and then to the owner's sheet, which also skips rows the
+owner has already ruled. The owner's time is the scarce input, so it is spent
+only where two independent reads disagree. On a 98-company test batch the
+sheet went from 29 items to 3.
+
+## Locations come from pages already bought
+
+The target is US companies, so sales needs to know where each qualified lead
+has a site. The answer was mostly on disk already. A script scans the stored
+pages at the pinned crawl date for postal addresses, with no model and no
+credits, and writes every site per company into one splittable cell plus a
+long file with one row per location. A foreign company with a US plant counts
+as a US lead. Location ranks leads and never decides a verdict. On a checked
+batch it agreed with the expert on US against non-US 92% of the time; a third
+of companies stayed unknown because their pages carry no address, and those
+are left unknown rather than guessed.
 
 ## Gate on regression, not on totals
 

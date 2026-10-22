@@ -1,8 +1,11 @@
 # Architecture
 
-A free discovery pass, a two-step crawl with six checks, an agent review and
-a workbook build. Every stage is a batch job that writes to a date-keyed store
-before the next one reads, and nothing holds state in memory between stages.
+A free discovery pass, the owner's yes to spend, a two-step crawl with six
+checks, an agent review and a workbook build. Two pages first, all ten only
+if unsure. Every stage is a batch job that writes to a date-keyed store before
+the next one reads, and nothing holds state in memory between stages.
+
+![The pipeline as one line, from free discovery to a free hand-over.](pipeline.svg)
 
 ## Stages
 
@@ -16,6 +19,9 @@ normalize ─────────────────► registrable dom
 discover ────── free ──────► 10 pages shortlisted, nothing bought
       │
       v
+spend gate ──── a person ──► dry run and credit check, then the owner's yes
+      │
+      v
 step 1 ──────── 2 credits ─► homepage + best product page, one model read
       │                      exit A: own cleanroom    ─┐
       │                      exit B: cannot need one  ─┼─ six checks, then stop
@@ -24,19 +30,27 @@ step 1 ──────── 2 credits ─► homepage + best product page, o
 step 2 ──────── 8 credits ─► the rest of the shortlist, verdict settled
       │                      raw/{domain}/{crawl_date}/manifest.json
       v
-agent review ── LLM only ──► cleanroom expert (blind), diagnostician, approval sheet
+expert ──────── LLM only ──► re-judges every company blind, 12 per chunk
       │
       v
-owner approval ────────────► rulings applied by script
+compare ─────── free ──────► script: expert against the hand-over; agreements stop
       │
       v
-hand-over ───── free ──────► integrity check, then one workbook per source list
+diagnostician ─ LLM only ──► disagreements only: the cause and the smallest fix
+      │
+      v
+owner ───────── a person ──► one sheet, a yes or no per item; rulings applied by
+      │                      script and written to the rule book the expert reads
+      v
+hand-over ───── free ──────► integrity check, locations, one workbook per source list
 ```
 
 The stage boundaries are where the money is. Discovery is free and decides
-what gets paid for. Step 1 and step 2 cost crawl credits and inference. The
-agent review costs inference only, because it reads pages already on disk.
-The hand-over costs nothing and can be rebuilt at any time.
+what gets paid for, and nothing is bought until the owner says yes. Step 1
+and step 2 cost crawl credits and inference. The agent review costs inference
+only, because it reads pages already on disk, and the compare in the middle
+of it is a script, so the diagnostician and the owner only ever see
+disagreements. The hand-over costs nothing and can be rebuilt at any time.
 
 ## The private codebase
 
@@ -56,8 +70,8 @@ The hand-over costs nothing and can be rebuilt at any time.
 | `matcher` | Deterministic scoring over the sector pack, an independent second opinion |
 
 About 15,000 lines of source and 863 offline tests. Around the engine sit the
-batch runner with its spend gate, the integrity check, the workbook builder,
-and the three agents.
+batch runner with its spend gate, the integrity check, the location
+extractor, the workbook builder, and the three agents.
 
 ## Model routing
 
@@ -79,8 +93,9 @@ The verdict comes from the crawl models. The exit confirmation is the same
 model family as the crawl, so it is a second read, not an independent one.
 Independence comes from two places: the cleanroom expert, which re-reads the
 company blind on a different model family, and the deterministic matcher,
-which scores the same evidence against the sector pack without a model. A row
-where these disagree is the only kind that reaches the owner.
+which scores the same evidence against the sector pack without a model. A
+script compares the expert with the current hand-over, and a row where they
+disagree is the only kind that reaches the diagnostician and the owner.
 
 ## Store layout
 
@@ -91,6 +106,7 @@ raw/{domain}/{crawl_date}/manifest.json
 raw/{domain}/{crawl_date}/{url_hash}.md
 runs/{project}/{run_id}/results.csv
 runs/{project}/{run_id}/stats.md
+runs/{project}/{project}_locations.csv
 ```
 
 Three properties carry the design:

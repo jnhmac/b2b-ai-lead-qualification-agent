@@ -1,116 +1,116 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="One company end to end: an unqualified list row becomes a qualified lead with a verified quote, for about eight crawl credits and seven cents all in.">
   <style>
-    .s  { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
-    .eb { font-size: 11.5px; fill: #6A7079; letter-spacing: 1.8px; }
-    .t1 { font-size: 30px; font-weight: 600; fill: #F3F5F8; letter-spacing: -0.4px; }
-    .t2 { font-size: 14.5px; fill: #969CA6; }
-    .st { font-size: 10.5px; fill: #565C65; letter-spacing: 1.3px; }
-    .bg { font-size: 20px; fill: #F3F5F8; font-weight: 500; }
-    .bd { font-size: 13.5px; fill: #9AA1AA; }
-    .mu { font-size: 12px; fill: #656B74; }
-    .qt { font-size: 13px; fill: #D6DBE2; }
-    .ok { font-size: 12.5px; fill: #57D9A3; }
-    .am { font-size: 12.5px; fill: #F2A03D; }
-    .fs { font-size: 13.5px; fill: #C7CCD4; }
-    .fl { font-size: 11.5px; fill: #656B74; }
+    .s  { font-family: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .m  { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+    .eb { font-size: 11.5px; fill: #6E767F; letter-spacing: 1.8px; }
+    .t1 { font-size: 30px; font-weight: 600; fill: #E8E6E1; letter-spacing: -0.4px; }
+    .t2 { font-size: 14.5px; fill: #8B949E; }
+    .st { font-size: 10.5px; fill: #545B63; letter-spacing: 1.3px; }
+    .bg { font-size: 20px; fill: #E8E6E1; font-weight: 500; }
+    .bd { font-size: 13.5px; fill: #9AA0A8; }
+    .mu { font-size: 12px; fill: #6E767F; }
+    .qt { font-size: 13px; fill: #DAD8D3; }
+    .ok { font-size: 12.5px; fill: #4CAF7D; }
+    .am { font-size: 12.5px; fill: #F2A33A; }
+    .fs { font-size: 13.5px; fill: #C9C7C2; }
+    .fl { font-size: 11.5px; fill: #6E767F; }
   </style>
 
-  <rect width="1200" height="630" fill="#0A0B0D"/>
+  <rect width="1200" height="630" fill="#0F1419"/>
 
   <text class="m eb" x="40" y="52">WEBSITE LEAD QUALIFIER</text>
   <text class="s t1" x="40" y="88">From a list nobody can sell to a qualified lead with proof</text>
   <text class="s t2" x="40" y="115">Medical device manufacturers, a cleanroom verdict, and the sentence from their own site that justifies it.</text>
 
   <!-- 01 input -->
-  <rect x="40" y="152" width="230" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
+  <rect x="40" y="152" width="230" height="322" rx="10" fill="#1A2027" stroke="#262C33"/>
   <text class="m st" x="60" y="178">01 · THE LIST</text>
   <text class="m bg" x="60" y="212" font-size="16">northfield-</text>
   <text class="m bg" x="60" y="234" font-size="16">catheter.example</text>
   <text class="m bd" x="60" y="262">exhibitor, booth 2140</text>
-  <line x1="60" y1="286" x2="250" y2="286" stroke="#1F232A"/>
+  <line x1="60" y1="286" x2="250" y2="286" stroke="#262C33"/>
   <text class="s mu" x="60" y="310">One row of about 1,100.</text>
   <text class="s mu" x="60" y="329">The category covers catheter</text>
   <text class="s mu" x="60" y="348">makers and wheelchair</text>
   <text class="s mu" x="60" y="367">makers alike. Only one of</text>
   <text class="s mu" x="60" y="386">them runs a cleanroom.</text>
-  <rect x="60" y="424" width="98" height="22" rx="5" fill="none" stroke="#2A2E35"/>
-  <text class="m" x="70" y="439" font-size="11" fill="#6A7079">UNQUALIFIED</text>
+  <rect x="60" y="424" width="98" height="22" rx="5" fill="none" stroke="#2E353D"/>
+  <text class="m" x="70" y="439" font-size="11" fill="#6E767F">UNQUALIFIED</text>
 
-  <path d="M280 307l9 9-9 9" fill="none" stroke="#3A3F47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M280 307l9 9-9 9" fill="none" stroke="#434649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- 02 two-page read -->
-  <rect x="298" y="152" width="230" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
+  <rect x="298" y="152" width="230" height="322" rx="10" fill="#1A2027" stroke="#262C33"/>
   <text class="m st" x="318" y="178">02 · READ TWO PAGES</text>
   <text class="m bg" x="318" y="212">2 of 10</text>
   <text class="s bd" x="318" y="240">shortlisted for free</text>
-  <line x1="318" y1="264" x2="508" y2="264" stroke="#1F232A"/>
+  <line x1="318" y1="264" x2="508" y2="264" stroke="#262C33"/>
   <text class="s mu" x="318" y="288">Homepage and best product</text>
   <text class="s mu" x="318" y="307">page, one model read.</text>
   <text class="s mu" x="318" y="339">Settled: stop here.</text>
   <text class="s mu" x="318" y="358">Not settled: buy the</text>
   <text class="s mu" x="318" y="377">other eight and read again.</text>
-  <rect x="318" y="424" width="104" height="22" rx="5" fill="none" stroke="#4A3A1E"/>
+  <rect x="318" y="424" width="104" height="22" rx="5" fill="none" stroke="#5A4424"/>
   <text class="m am" x="328" y="439" font-size="11">2 CREDITS</text>
 
-  <path d="M538 307l9 9-9 9" fill="none" stroke="#3A3F47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M538 307l9 9-9 9" fill="none" stroke="#434649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- 03 guards -->
-  <rect x="556" y="152" width="320" height="322" rx="10" fill="#101216" stroke="#1F232A"/>
+  <rect x="556" y="152" width="320" height="322" rx="10" fill="#1A2027" stroke="#262C33"/>
   <text class="m st" x="576" y="178">03 · SIX CHECKS</text>
 
-  <rect x="576" y="194" width="280" height="76" rx="7" fill="#0D0F12" stroke="#21252B"/>
+  <rect x="576" y="194" width="280" height="76" rx="7" fill="#131920" stroke="#262C33"/>
   <text class="m qt" x="590" y="217">&#8220;Our ISO Class 7 cleanroom</text>
   <text class="m qt" x="590" y="237">supports catheter assembly</text>
   <text class="m qt" x="590" y="257">and packaging.&#8221;</text>
 
-  <path d="M578 278l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M578 278l5 5 8-9" fill="none" stroke="#4CAF7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="s ok" x="596" y="284">A sentence, not an image name</text>
-  <path d="M578 298l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M578 298l5 5 8-9" fill="none" stroke="#4CAF7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="s ok" x="596" y="304">Names a controlled environment</text>
-  <path d="M578 318l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M578 318l5 5 8-9" fill="none" stroke="#4CAF7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="s ok" x="596" y="324">Verbatim on the stored page</text>
-  <path d="M578 338l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M578 338l5 5 8-9" fill="none" stroke="#4CAF7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="s ok" x="596" y="344">The company is the subject</text>
-  <path d="M578 358l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M578 358l5 5 8-9" fill="none" stroke="#4CAF7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="s ok" x="596" y="364">Not a sales pitch</text>
-  <path d="M578 378l5 5 8-9" fill="none" stroke="#57D9A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M578 378l5 5 8-9" fill="none" stroke="#4CAF7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="s ok" x="596" y="384">A second model: their own room</text>
 
   <text class="s mu" x="576" y="412">A refused check sends it to the full read.</text>
 
-  <rect x="576" y="428" width="124" height="22" rx="5" fill="none" stroke="#4A3A1E"/>
+  <rect x="576" y="428" width="124" height="22" rx="5" fill="none" stroke="#5A4424"/>
   <text class="m am" x="586" y="443" font-size="11">INFERENCE ONLY</text>
 
-  <path d="M886 307l9 9-9 9" fill="none" stroke="#3A3F47" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M886 307l9 9-9 9" fill="none" stroke="#434649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- 04 agent review and verdict -->
-  <rect x="904" y="152" width="256" height="322" rx="10" fill="#121815" stroke="#245243"/>
+  <rect x="904" y="152" width="256" height="322" rx="10" fill="#1A2420" stroke="#31694F"/>
   <text class="m st" x="924" y="178">04 · AGENT REVIEW</text>
-  <text class="m" x="924" y="216" font-size="27" font-weight="500" fill="#57D9A3">in_house</text>
+  <text class="m" x="924" y="216" font-size="27" font-weight="500" fill="#4CAF7D">in_house</text>
   <text class="m bd" x="924" y="246">ISO 7 · expert agrees</text>
-  <line x1="924" y1="270" x2="1140" y2="270" stroke="#1F3A31"/>
+  <line x1="924" y1="270" x2="1140" y2="270" stroke="#22392F"/>
   <text class="s mu" x="924" y="294">A Claude agent re-judged</text>
   <text class="s mu" x="924" y="313">the company blind, from its</text>
   <text class="s mu" x="924" y="332">own pages, and agreed.</text>
   <text class="s mu" x="924" y="364">Where it disagrees, a second</text>
   <text class="s mu" x="924" y="383">agent names the cause and the</text>
   <text class="s mu" x="924" y="402">owner decides.</text>
-  <rect x="924" y="424" width="128" height="22" rx="5" fill="none" stroke="#245243"/>
+  <rect x="924" y="424" width="128" height="22" rx="5" fill="none" stroke="#31694F"/>
   <text class="m ok" x="934" y="439" font-size="11">QUALIFIED LEAD</text>
 
   <!-- proof strip -->
-  <rect x="40" y="506" width="1120" height="76" rx="10" fill="#101216" stroke="#1F232A"/>
+  <rect x="40" y="506" width="1120" height="76" rx="10" fill="#1A2027" stroke="#262C33"/>
 
   <text class="m fs" x="66" y="536">~8 credits + ~7 cents</text>
   <text class="s fl" x="66" y="558">average cost to qualify one company, all in</text>
 
-  <line x1="400" y1="524" x2="400" y2="564" stroke="#1F232A"/>
+  <line x1="400" y1="524" x2="400" y2="564" stroke="#262C33"/>
 
   <text class="m fs" x="426" y="536">~540 of ~1,100</text>
   <text class="s fl" x="426" y="558">qualified leads from one trade-show exhibitor list</text>
 
-  <line x1="822" y1="524" x2="822" y2="564" stroke="#1F232A"/>
+  <line x1="822" y1="524" x2="822" y2="564" stroke="#262C33"/>
 
   <text class="m fs" x="848" y="536">~13 cents</text>
   <text class="s fl" x="848" y="558">per qualified lead, audits included</text>
