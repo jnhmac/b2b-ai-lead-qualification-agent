@@ -2,7 +2,7 @@
 
 [![Watch the 72-second walkthrough: how the agent decides which companies on a list run their own cleanroom.](docs/case-study-poster.png)](https://cdn.jsdelivr.net/gh/jnhmac/b2b-ai-lead-qualification-agent@main/docs/case-study.mp4)
 
-
+---
 
 ![One company end to end: an unqualified list row becomes a qualified lead with a verified quote, for about eight crawl credits and seven cents all in.](docs/hero.svg)
 
