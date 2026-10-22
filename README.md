@@ -1,6 +1,6 @@
 # AI lead qualification agent (B2B)
 
-[![Watch the 72-second walkthrough: how the agent decides which companies on a list run their own cleanroom.](docs/case-study-poster.png)](https://github.com/jnhmac/b2b-ai-lead-qualification-agent/blob/main/docs/case-study.mp4)
+[![Watch the 72-second walkthrough: how the agent decides which companies on a list run their own cleanroom.](docs/case-study-poster.png)](https://github.com/jnhmac/b2b-ai-lead-qualification-agent/raw/main/docs/case-study.mp4)
 
 *72-second walkthrough. Click to play.*
 
